@@ -1,0 +1,31 @@
+#! /bin/bash
+
+day=${1:-1}
+
+if [ ! -d "day$day" ]; then
+    mkdir "day$day"
+fi
+cd "day$day"
+
+if [ ! -f "main.py" ]; then
+cat > "main.py" <<- EOM
+import sys
+
+def part1(arr):
+    return
+
+def part2(arr):
+    return
+
+if __name__ == "__main__":
+    f = open(sys.argv[1], "r")
+
+    arr = f.readlines()
+
+    print(part1(arr))
+    print(part2(arr))
+EOM
+fi
+
+touch "input.txt"
+touch "sample.txt"

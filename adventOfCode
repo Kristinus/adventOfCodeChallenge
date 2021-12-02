@@ -1,0 +1,8 @@
+#! /bin/bash
+
+day=${1:-1}
+input=${2:-"input.txt"}
+
+cd "day$day"
+echo "Running day $day with $input"
+eval "python main.py $input"
