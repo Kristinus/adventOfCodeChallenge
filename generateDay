@@ -18,12 +18,12 @@ def part2(arr):
     return
 
 if __name__ == "__main__":
-    f = open(sys.argv[1], "r")
+    if __name__ == "__main__":
+    with open(sys.argv[1], "r") as f:
+        arr = f.read().splitlines()
 
-    arr = f.readlines()
-
-    print(part1(arr))
-    print(part2(arr))
+        print(part1(arr))
+        print(part2(arr))
 EOM
 fi
 
