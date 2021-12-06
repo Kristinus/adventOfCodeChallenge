@@ -7,8 +7,15 @@ authors = ["Bryan Kristiono <bryan.m.kristiono@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 pandas = "^1.3.4"
+# Juptyer extension stuff:
+ipywidgets = "*"
+jupyterlab_execute_time = "*"  # 2021-03: You need to add {"recordTiming": true} to Settings -> Notebook for this to work
+jupytext = "*"  # Automatic and transparent management of ipynbs as .py files
+jupyterlab = "*"
 
 [tool.poetry.dev-dependencies]
+# Initialize using  make init-jupyter-extensions
+# jupyterlab_code_formatter = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
