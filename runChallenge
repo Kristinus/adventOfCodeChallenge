@@ -5,8 +5,9 @@ input=${2:-"input.txt"}
 
 cd "adventOfCode/day$day"
 if [ ! -f "main.py" ]; then
-    echo "Running notebook on day $day"
-    poetry run ipython -c "%run main.ipynb"
+    files=( *.ipynb )
+    echo "Running notebook $files on day $day with $input"
+    poetry run ipython -c "%run $files" $input
 else
     echo "Running day $day with $input"
     eval "poetry run python main.py $input"
