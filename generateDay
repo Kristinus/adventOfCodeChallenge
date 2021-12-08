@@ -1,30 +1,32 @@
 #! /bin/bash
 
-day=${1:-1}
+day=${1}
 
-if [ ! -d "adventOfCode/day$day" ]; then
-    mkdir "adventOfCode/day$day"
+cd "adventOfCode"
+
+if [ -z "$day" ]; then
+    # If no day is given, generate next day
+    for i in {1..25}
+    do
+        if [ ! -d "day$i" ]; then
+            day=${i}
+            break
+        fi
+    done
 fi
-cd "adventOfCode/day$day"
+echo "Generating day $day"
+if [ ! -d "day$day" ]; then
+    mkdir "day$day"
+fi
+cd "day$day"
 
-if [ ! -f "main.py" ]; then
-cat > "main.py" <<- EOM
-import sys
-
-def part1(arr):
-    return
-
-def part2(arr):
-    return
-
-if __name__ == "__main__":
-    with open(sys.argv[1], "r") as f:
-        arr = f.read().splitlines()
-
-        print(part1(arr))
-        print(part2(arr))
-EOM
+if [ ! -f "main.ipynb" ]; then
+    cp ../base.ipynb main.ipynb
 fi
 
 touch "input.txt"
 touch "sample.txt"
+
+until $(curl --output input.txt --silent --fail https://adventofcode.com/2021/day/$day/input -H @../../.cookie.txt); do
+    sleep 5
+done

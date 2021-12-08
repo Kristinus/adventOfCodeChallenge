@@ -7,5 +7,3 @@ Every day of December, a new puzzle is presented. This repository provides the a
 - Define optimal project structure
 - Create Makefile
 - replace main.py with .ipynb
-- update generateDay with polling http request to get input
-- update generateDay to generate .ipynb

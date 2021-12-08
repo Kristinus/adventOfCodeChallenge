@@ -3,6 +3,11 @@
 day=${1:-1}
 input=${2:-"input.txt"}
 
-cd "day$day"
-echo "Running day $day with $input"
-eval "poetry run python main.py $input"
+cd "adventOfCode/day$day"
+if [ ! -f "main.py" ]; then
+    echo "Running notebook on day $day"
+    poetry run ipython -c "%run main.ipynb"
+else
+    echo "Running day $day with $input"
+    eval "poetry run python main.py $input"
+fi
