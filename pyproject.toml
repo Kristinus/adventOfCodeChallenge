@@ -12,10 +12,11 @@ ipywidgets = "*"
 jupyterlab_execute_time = "*"  # 2021-03: You need to add {"recordTiming": true} to Settings -> Notebook for this to work
 jupytext = "*"  # Automatic and transparent management of ipynbs as .py files
 jupyterlab = "*"
+tqdm = "^4.62.3"
+jupyterlab-code-formatter = "^1.4.10"
 
 [tool.poetry.dev-dependencies]
-# Initialize using  make init-jupyter-extensions
-# jupyterlab_code_formatter = "*"
+jupyterlab-code-formatter = "^1.4.10"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
