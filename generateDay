@@ -28,5 +28,5 @@ touch "input.txt"
 touch "sample.txt"
 
 until $(curl --output input.txt --silent --fail https://adventofcode.com/2021/day/$day/input -H @../../.cookie.txt); do
-    sleep 5
+    sleep 30
 done
