@@ -14,6 +14,7 @@ jupytext = "*"  # Automatic and transparent management of ipynbs as .py files
 jupyterlab = "*"
 tqdm = "^4.62.3"
 jupyterlab-code-formatter = "^1.4.10"
+matplotlib = "^3.5.1"
 
 [tool.poetry.dev-dependencies]
 jupyterlab-code-formatter = "^1.4.10"
